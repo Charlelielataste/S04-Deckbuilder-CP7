@@ -1,0 +1,19 @@
+<%- include('header') %>
+
+<h1>"Deck"</h1>
+
+<div class="cardsContainer">
+    <% if (bookmarkscard !== undefined) { %>
+        <% for (const bookmarkcards of bookmarkscard) { %>
+    <div class="card">
+      <a href="/cardpage/<%= bookmarkcards.id %>">
+        <img src="/visuals/<%= bookmarkcards.visual_name %>" alt="<%= bookmarkcards.name %> illustration">
+        <p class="cardName"><%= bookmarkcards.name %></p>
+    </div>
+    <a href="/deck/delete/<%= bookmarkcards.id %>">Enlever de la liste</a>
+    <% } %>
+              <% } %> 
+
+</div>
+
+<%- include('footer') %>
